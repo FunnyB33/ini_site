@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block title %}ホーム{% endblock %}
+
+{% block content %}
+<!-- ヒーローセクション -->
+<section class="hero-section">
+    <div class="container text-center">
+        <h1 class="display-4 fw-bold mb-4">Welcome to My Portfolio</h1>
+        <p class="lead">自己紹介、プロジェクト、趣味、筋トレについて発信しています</p>
+    </div>
+</section>
+
+<!-- 最新記事セクション -->
+<section class="container section">
+    <h2 class="text-center mb-5">最新記事</h2>
+    <div class="row">
+        <!-- 記事カード1 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="記事の画像">
+                <div class="card-body">
+                    <h5 class="card-title">自己紹介を更新しました</h5>
+                    <p class="card-text text-muted">2025年6月10日</p>
+                    <p class="card-text">自己紹介ページを新しく更新しました。私の経歴やスキルについて詳しく書いています。</p>
+                    <a href="#about" class="btn btn-primary">もっと読む</a>
+                </div>
+            </div>
+        </div>
+        <!-- 記事カード2 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="記事の画像">
+                <div class="card-body">
+                    <h5 class="card-title">新しいプロジェクトを開始</h5>
+                    <p class="card-text text-muted">2025年6月5日</p>
+                    <p class="card-text">新しいWebアプリケーションの開発を始めました。詳細はプロジェクトページでご確認ください。</p>
+                    <a href="#projects" class="btn btn-primary">もっと読む</a>
+                </div>
+            </div>
+        </div>
+        <!-- 記事カード3 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="記事の画像">
+                <div class="card-body">
+                    <h5 class="card-title">筋トレ記録を更新</h5>
+                    <p class="card-text text-muted">2025年5月28日</p>
+                    <p class="card-text">先月のトレーニング記録を更新しました。ベンチプレスの記録が更新できました！</p>
+                    <a href="#fitness" class="btn btn-primary">もっと読む</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- セクションリンク -->
+<section class="bg-light py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <a href="#about" class="text-decoration-none text-dark">
+                    <div class="card h-100 text-center p-4">
+                        <i class="bi bi-person-circle display-4 mb-3 text-primary"></i>
+                        <h3>自己紹介</h3>
+                        <p class="text-muted">私についての詳細な情報はこちら</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <a href="#projects" class="text-decoration-none text-dark">
+                    <div class="card h-100 text-center p-4">
+                        <i class="bi bi-code-slash display-4 mb-3 text-primary"></i>
+                        <h3>プロジェクト</h3>
+                        <p class="text-muted">これまでの制作物を紹介</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <a href="#hobbies" class="text-decoration-none text-dark">
+                    <div class="card h-100 text-center p-4">
+                        <i class="bi bi-joystick display-4 mb-3 text-primary"></i>
+                        <h3>趣味</h3>
+                        <p class="text-muted">私の趣味や興味のあること</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <a href="#fitness" class="text-decoration-none text-dark">
+                    <div class="card h-100 text-center p-4">
+                        <i class="bi bi-activity display-4 mb-3 text-primary"></i>
+                        <h3>筋トレ</h3>
+                        <p class="text-muted">トレーニング記録と進捗</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
