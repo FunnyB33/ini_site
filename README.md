@@ -221,3 +221,9 @@ ini_site/
 | Privacy          | `/privacy`             | - プライバシーポリシー                                     |
 | Sitemap (HTML)   | `/sitemap`             | - 人間用サイトマップ                                      |
 | 404 Not Found    | `/404` (カスタム)          | - 見つからないときの案内ページ                                 |
+
+``` bash
+flask db init  # 初回のみ
+flask db migrate -m "Update models to use UUID"
+flask db upgrade
+```
