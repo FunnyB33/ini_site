@@ -1,19 +1,103 @@
-# 自分サイトを作る。
+# 自分サイト開発プロジェクト
 
-## 構成
-**Frontend：**
-- HTML5 / CSS3
-- Tailwind CSS（ユーティリティファーストで高速開発）
-- JavaScript（ES6+）
-- GSAP（GreenSock Animation Platform）＋ScrollTriggerプラグイン
-- Alpine.js（軽量なリアクティブUI制御用／必要に応じて）
+## プロジェクト概要
+自己紹介、スキル、制作物、趣味などを発信するパーソナルポートフォリオサイトです。
 
-**Backend：**
-- Python 3.10+ / Flask
-- Flask Blueprints（モジュール分割）
-- SQLAlchemy ORM ＋ Alembic（マイグレーション）
-- Flask-Login（セッション認証）
-- Flask-RESTful（API設計）
+## 1. サイト構造
+
+```
+/
+├── /about/           # 自己紹介・プロフィール
+├── /works/           # 制作実績一覧
+│   └── /:work_id/    # 個別作品詳細
+├── /blog/            # ブログ記事一覧
+│   └── /:post_id/    # 個別記事
+├── /hobbies/         # 趣味のページ
+│   ├── /photography/ # 写真作品
+│   └── /gaming/      # ゲーム実績
+├── /training/        # トレーニング記録
+├── /contact/         # お問い合わせ
+└── /admin/           # 管理画面（ログイン要）
+```
+
+## 2. 技術スタック
+
+### フロントエンド
+- **コア**: HTML5, CSS3, JavaScript (ES6+)
+- **フレームワーク**: React.js (Next.js)
+- **スタイリング**: Tailwind CSS + CSS Modules
+- **アニメーション**: GSAP + ScrollTrigger
+- **状態管理**: Alpine.js（軽量なインタラクション用）
+- **UIコンポーネント**: Tailwind UI, Heroicons
+
+### バックエンド
+- **フレームワーク**: Python 3.10+ / Flask
+- **アーキテクチャ**: Flask Blueprints（モジュール分割）
+- **データベース**: PostgreSQL + SQLAlchemy ORM
+- **認証**: Flask-Login（セッション認証）
+- **API**: Flask-RESTful
+- **マイグレーション**: Alembic
+
+### インフラ
+- **ホスティング**: Vercel (Frontend) + Render (Backend)
+- **CI/CD**: GitHub Actions
+- **監視**: Sentry
+- **CDN**: Cloudflare
+
+## 3. 主要機能
+
+### ユーザー向け
+- レスポンシブデザイン
+- ダークモード対応
+- パフォーマンス最適化
+- アクセシビリティ対応
+- サイト内検索
+- コメント機能（Utterances連携）
+
+### 管理者向け
+- マークダウンエディタ
+- メディア管理
+- アクセス解析
+- バックアップ機能
+
+## 4. 開発フロー
+
+1. **環境構築**
+   - Docker Composeによる開発環境
+   - 自動フォーマット・リンター設定
+   - コミットフックの設定
+
+2. **開発**
+   - 機能単位でのブランチ運用
+   - コンポーネント駆動開発
+   - StorybookによるUI開発
+
+3. **テスト**
+   - ユニットテスト
+   - E2Eテスト
+   - パフォーマンステスト
+
+4. **デプロイ**
+   - プレビュー環境への自動デプロイ
+   - 本番環境へのマージ時デプロイ
+   - ロールバック戦略
+
+## 5. ロードマップ
+
+### 短期目標
+- [ ] プロトタイプの作成
+- [ ] 認証機能の実装
+- [ ] ブログ機能の実装
+
+### 中期目標
+- [ ] パフォーマンス最適化
+- [ ] アクセシビリティ対応
+- [ ] 多言語対応
+
+### 長期目標
+- [ ] PWA対応
+- [ ] オフライン機能
+- [ ] APIの一般公開
 
 **Design：**
 - Figma（ワイヤーフレーム＆プロトタイプ作成）
