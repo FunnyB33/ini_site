@@ -44,6 +44,81 @@
 - **監視**: Sentry
 - **CDN**: Cloudflare
 
+## 3. ファイル構成
+
+```
+ini_site/
+├── frontend/                 # Next.js フロントエンド
+│   ├── public/               # 静的ファイル
+│   ├── src/
+│   │   ├── app/              # Next.js App Router
+│   │   │   ├── about/        # 自己紹介ページ
+│   │   │   ├── works/        # 制作実績一覧・詳細
+│   │   │   ├── blog/         # ブログ記事一覧・詳細
+│   │   │   ├── hobbies/      # 趣味関連ページ
+│   │   │   ├── training/     # トレーニング記録
+│   │   │   └── contact/      # お問い合わせ
+│   │   ├── components/       # 再利用可能なコンポーネント
+│   │   ├── lib/              # ユーティリティ関数
+│   │   └── styles/           # スタイルシート
+│   ├── package.json
+│   └── next.config.js
+│
+├── backend/                  # Flask バックエンド
+│   ├── app/
+│   │   ├── __init__.py
+│   │   ├── config.py         # 設定ファイル
+│   │   ├── models/           # データベースモデル
+│   │   │   ├── __init__.py
+│   │   │   ├── user.py       # ユーザー
+│   │   │   ├── post.py       # ブログ記事
+│   │   │   └── work.py       # 制作物
+│   │   │
+│   │   ├── routes/           # ルーティング
+│   │   │   ├── __init__.py
+│   │   │   ├── auth.py       # 認証関連
+│   │   │   ├── blog.py       # ブログ関連
+│   │   │   └── api/          # APIエンドポイント
+│   │   │
+│   │   ├── static/           # 静的ファイル
+│   │   └── templates/        # 管理画面用テンプレート
+│   │
+│   ├── migrations/           # データベースマイグレーション
+│   ├── requirements.txt      # Python依存関係
+│   └── wsgi.py              # 本番用WSGIエントリーポイント
+│
+├── .github/                 # GitHub設定
+│   └── workflows/           # GitHub Actions
+│       ├── test.yml
+│       └── deploy.yml
+│
+├── .gitignore
+└── README.md
+```
+
+### 主な特徴
+
+1. **フロントエンド (Next.js)**
+   - App Routerを採用したモダンなルーティング
+   - コンポーネントベースの設計
+   - 静的サイト生成(SSG)とサーバーサイドレンダリング(SSR)の併用
+
+2. **バックエンド (Flask)**
+   - Blueprintを使用したモジュール分割
+   - RESTful API設計
+   - SQLAlchemyによるORマッピング
+
+3. **開発環境**
+   - フロントエンド: Next.js開発サーバー
+   - バックエンド: Flask開発サーバー
+   - データベース: PostgreSQL (本番), SQLite (開発)
+
+4. **デプロイ**
+   - フロントエンド: Vercel
+   - バックエンド: Render
+   - データベース: PostgreSQL (Render Postgres)
+   - ドメイン: Cloudflare
+
 ## 3. 主要機能
 
 ### ユーザー向け
